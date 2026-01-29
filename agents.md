@@ -166,4 +166,35 @@ src/app.css or src/routes/layout.css
 
 ``` 
 
+## Firebase auth
+
+To set up Firebase authentication in your SvelteKit project, follow these steps:
+
+./src/lib/firebase.ts
+```ts
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDmKrv3-pOLUMeVKXJkpg6IEN0AOQXQ--s",
+      authDomain: "playground-428410.firebaseapp.com",
+      projectId: "playground-428410",
+      storageBucket: "playground-428410.firebasestorage.app",
+      messagingSenderId: "277290577442",
+      appId: "1:277290577442:web:42c938424097dad5f9247b",
+      measurementId: "G-HHGS6GZDW7"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+```
+
+**Note**: Make sure you make use of svelte server hooks to manage authentication state between server and client.
+
 
